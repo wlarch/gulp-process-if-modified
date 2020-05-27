@@ -1,6 +1,6 @@
 # gulp-process-if-modified
 
-[![Build Status](https://travis-ci.org/wlarch/gulp-process-if-modified.svg?branch=master)](https://travis-ci.org/wlarch/gulp-process-if-modified) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/gulp-process-if-modified) ![NPM](https://img.shields.io/npm/l/gulp-process-if-modified)
+[![Build Status](https://travis-ci.org/wlarch/gulp-process-if-modified.svg?branch=master)](https://travis-ci.org/wlarch/gulp-process-if-modified) ![NPM](https://img.shields.io/npm/l/gulp-process-if-modified)
 
 > This gulp plugin will passthrough source files if they have been modified since last build.
 
