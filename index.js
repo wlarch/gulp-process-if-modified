@@ -2,13 +2,25 @@ var crypto = require('crypto');
 var path = require('path');
 var through = require('through2');
 
+var init = function() {
+  var fs = require('fs');
+  var dir = './cache';
+
+  if (!fs.existsSync(dir)){
+      fs.mkdirSync(dir);
+  }
+}
+
 module.exports = function (options) {
+
+  init();
+
   options = options || {};
 
   // Initialize cache object
   const cache = require('node-file-cache').create(
     {
-      file: options.cacheFilename || '.cache.json',
+      file: options.cacheFilename || './cache/.cache.json',
       life: options.cacheLife || 1814400 // 3 weeks by default
     }
   );
@@ -26,7 +38,7 @@ module.exports = function (options) {
    * @param {*} basePath  The basePath used to create file key in cache
    * @param {*} file  The file itself
    */
-  function hasFileChangedBySha1Hash(stream, basePath, file) {
+  function hasFileChangedBySha1Hash(basePath, file) {
 
     // If file contents is null, it cannot be hashed
     if (file.contents === null && file.stat.isFile()) {
@@ -68,7 +80,7 @@ module.exports = function (options) {
     files.push(file);
 
     // Check if file has changed
-    if (hasFileChangedBySha1Hash(this, basePath, file)) {
+    if (hasFileChangedBySha1Hash(basePath, file)) {
       hasChanged = true;
     }
 

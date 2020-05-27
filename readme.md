@@ -58,7 +58,7 @@ gulp.task(config.path + '-styles', () =>{
 
 #### `cacheFilename`
 * `string`
-* Default = `.cache.json`
+* Default = `./cache/.cache.json`
 
 #### `cacheLife`
 * `int`
