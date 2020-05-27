@@ -9,7 +9,9 @@ describe('gulp-changed-in-place', function () {
 
   describe('When comparing by sha1 hash', function () {
 
-    fs.unlinkSync('cache.json')
+    if (fs.existsSync('cache.json')) {
+      fs.unlinkSync()
+    }
 
     it('Should passthrough all files on first run (no cache)', function (done) {
       gulp.src('test_assets/*')
