@@ -1,0 +1,52 @@
+{
+  "name": "gulp-process-if-modified",
+  "version": "1.0.0",
+  "description": "This gulp plugin will passthrough source files if they have been modified since last build.",
+  "license": "MIT",
+  "repository": "wlarch/gulp-process-if-modified",
+  "homepage": "https://github.com/wlarch/gulp-process-if-modified",
+  "author": {
+    "name": "William L'Archevêque",
+    "email": "info@wlarcheveque.com",
+    "url": "https://github.com/wlarch"
+  },
+  "bugs": {
+    "url": "https://github.com/wlarch/gulp-process-if-modified/issues"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulp",
+    "plugin",
+    "file",
+    "files",
+    "changed",
+    "newer",
+    "modified",
+    "modification",
+    "updated",
+    "time",
+    "mtime",
+    "stat",
+    "cache",
+    "cached",
+    "passthrough"
+  ],
+  "dependencies": {
+    "node-file-cache": "^1.0.2",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.4.6",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.0.0",
+    "mocha": "^3.5.3"
+  }
+}
