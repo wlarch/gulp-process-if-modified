@@ -54,12 +54,15 @@ gulp.task(config.path + '-styles', () =>{
 
 ### processIfModified({options})
 
+#### `cacheFilename`
+* `string`
+* Default = `.cache.json`
 
 #### `cacheLife`
 * `int`
 * Default = `1814400`
 
-  Lifetime in seconds (default 3 weeks)  `{ key: value }` format for all the files that is shared between all runs. Value will be hash or modification time, depending on the `howToDetermineDifference` option.
+  Cache keys lifetime in seconds (default 3 weeks).
 
 #### `basePath`
 * `string`

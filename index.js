@@ -8,7 +8,7 @@ module.exports = function (options) {
   // Initialize cache object
   const cache = require('node-file-cache').create(
     {
-      file: 'cache.json',
+      file: options.cacheFilename || '.cache.json',
       life: options.cacheLife || 1814400 // 3 weeks by default
     }
   );

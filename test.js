@@ -9,7 +9,7 @@ describe('gulp-changed-in-place', function () {
 
   describe('When comparing by sha1 hash', function () {
 
-    if (fs.existsSync('cache.json')) {
+    if (fs.existsSync('.cache.json')) {
       fs.unlinkSync()
     }
 
