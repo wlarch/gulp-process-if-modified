@@ -1,5 +1,7 @@
 # gulp-process-if-modified
 
+[![Build Status](https://travis-ci.org/wlarch/gulp-process-if-modified.svg?branch=master)](https://travis-ci.org/wlarch/gulp-process-if-modified)
+
 > This gulp plugin will passthrough source files if they have been modified since last build.
 
 _Inspired by [gulp-changed](https://github.com/sindresorhus/gulp-changed) and [gulp-changed-in-place](https://github.com/alexgorbatchev/gulp-changed-in-place)_
