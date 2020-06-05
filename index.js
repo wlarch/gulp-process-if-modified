@@ -1,13 +1,16 @@
 var crypto = require('crypto');
 var path = require('path');
 var through = require('through2');
+var cacheDir = './cache';
 
+/**
+ * Create cache directory if non existent
+ */
 var init = function() {
   var fs = require('fs');
-  var dir = './cache';
 
-  if (!fs.existsSync(dir)){
-      fs.mkdirSync(dir);
+  if (!fs.existsSync(cacheDir)){
+      fs.mkdirSync(cacheDir);
   }
 }
 
@@ -17,10 +20,12 @@ module.exports = function (options) {
 
   options = options || {};
 
+  var filename = '.cache-' + (options.cacheFilename || 'default') + '.json';
+
   // Initialize cache object
   const cache = require('node-file-cache').create(
     {
-      file: options.cacheFilename || './cache/.cache.json',
+      file: cacheDir + '/' + filename,
       life: options.cacheLife || 1814400 // 3 weeks by default
     }
   );

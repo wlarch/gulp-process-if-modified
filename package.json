@@ -1,6 +1,6 @@
 {
   "name": "gulp-process-if-modified",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This gulp plugin will passthrough source files if they have been modified since last build.",
   "license": "MIT",
   "repository": "wlarch/gulp-process-if-modified",
@@ -40,13 +40,13 @@
     "passthrough"
   ],
   "dependencies": {
-    "node-file-cache": "^1.0.2",
-    "through2": "^2.0.0",
+    "diff": ">=3.5.0",
+    "growl": ">=1.10.0",
     "lodash": ">=4.17.12",
     "lodash.template": ">=4.5.0",
-    "growl": ">=1.10.0",
     "minimatch": ">=3.0.2",
-    "diff": ">=3.5.0"
+    "node-file-cache": "^1.0.2",
+    "through2": "^2.0.0"
   },
   "devDependencies": {
     "concat-stream": "^1.4.6",

@@ -7,12 +7,11 @@ var fs = require('fs')
 
 describe('gulp-changed-in-place', function () {
 
+  if (fs.existsSync('./cache/.cache-default.json')) {
+    fs.unlinkSync('./cache/.cache-default.json');
+  }
+
   describe('When comparing by sha1 hash', function () {
-
-    if (fs.existsSync('./cache/.cache.json')) {
-      fs.unlinkSync('./cache/.cache.json')
-    }
-
     it('Should passthrough all files on first run (no cache)', function (done) {
       gulp.src('test_assets/*')
         .pipe(processIfModified())

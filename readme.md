@@ -45,7 +45,7 @@ gulp.task(config.path + '-styles', () =>{
     var css_build_path = 'public/build/css/';
 
     return gulp.src(files)
-        .pipe(processIfModified())
+        .pipe(processIfModified({ cacheFilename: "styles" }))
         .pipe(sass().on('error', sass.logError))
         .pipe(rename('styles.min.css'))
         .pipe(gulp.dest(css_build_path));
@@ -58,7 +58,9 @@ gulp.task(config.path + '-styles', () =>{
 
 #### `cacheFilename`
 * `string`
-* Default = `./cache/.cache.json`
+* Default = `./cache/.cache-default.json`
+
+  Cache filename for specific task. The name provided here will be prefixed with `.cache-`. Example : `special_task` as cacheFilename will create the following file in cache folder : `./cache/.cache-special_task.json`
 
 #### `cacheLife`
 * `int`
@@ -70,7 +72,11 @@ gulp.task(config.path + '-styles', () =>{
 * `string`
 * Default = `undefined`
 
-  Allows you to set relative path that will be used for storing paths in the `cache`.
+  Allows you to set relative path that will be used for storing paths (keys) in the `cache`.
+
+# Issues
+
+* Be careful not to have multiple processes accessing the same cache file. In fact, it is sugested that each gulp task has it's own cache file by using the `cacheFilename` option above.
 
 # Attribution
 
