@@ -1,6 +1,6 @@
 {
   "name": "gulp-process-if-modified",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This gulp plugin will passthrough source files if they have been modified since last build.",
   "license": "MIT",
   "repository": "wlarch/gulp-process-if-modified",
